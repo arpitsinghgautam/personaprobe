@@ -1,0 +1,220 @@
+{
+  "0.0": {
+    "animal": {
+      "concordance": 0.88,
+      "n_pairs": 15,
+      "ci": [
+        0.8,
+        0.96
+      ]
+    },
+    "epi": {
+      "concordance": 0.9333333333333333,
+      "n_pairs": 15,
+      "ci": [
+        0.8,
+        1.0
+      ]
+    },
+    "human": {
+      "concordance": 0.8928571428571429,
+      "n_pairs": 28,
+      "ci": [
+        0.8142857142857143,
+        0.9571428571428572
+      ]
+    },
+    "money": {
+      "concordance": 1.0,
+      "n_pairs": 15,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "self": {
+      "concordance": 0.9285714285714286,
+      "n_pairs": 28,
+      "ci": [
+        0.8642857142857143,
+        0.9785714285714285
+      ]
+    },
+    "trivial": {
+      "concordance": 0.8933333333333333,
+      "n_pairs": 15,
+      "ci": [
+        0.7733333333333333,
+        0.9733333333333334
+      ]
+    }
+  },
+  "0.25": {
+    "animal": {
+      "concordance": 1.0,
+      "n_pairs": 9,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "epi": {
+      "concordance": 1.0,
+      "n_pairs": 14,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "human": {
+      "concordance": 0.9727272727272728,
+      "n_pairs": 22,
+      "ci": [
+        0.9272727272727272,
+        1.0
+      ]
+    },
+    "money": {
+      "concordance": 1.0,
+      "n_pairs": 13,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "self": {
+      "concordance": 0.9809523809523809,
+      "n_pairs": 21,
+      "ci": [
+        0.9523809523809523,
+        1.0
+      ]
+    },
+    "trivial": {
+      "concordance": 0.9666666666666667,
+      "n_pairs": 12,
+      "ci": [
+        0.9166666666666666,
+        1.0
+      ]
+    }
+  },
+  "0.5": {
+    "animal": {
+      "concordance": 1.0,
+      "n_pairs": 9,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "epi": {
+      "concordance": 1.0,
+      "n_pairs": 14,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "human": {
+      "concordance": 0.9727272727272728,
+      "n_pairs": 22,
+      "ci": [
+        0.9272727272727272,
+        1.0
+      ]
+    },
+    "money": {
+      "concordance": 1.0,
+      "n_pairs": 11,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "self": {
+      "concordance": 1.0,
+      "n_pairs": 17,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "trivial": {
+      "concordance": 1.0,
+      "n_pairs": 9,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "1.0": {
+    "animal": {
+      "concordance": 1.0,
+      "n_pairs": 9,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "epi": {
+      "concordance": 1.0,
+      "n_pairs": 11,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "human": {
+      "concordance": 1.0,
+      "n_pairs": 19,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "money": {
+      "concordance": 1.0,
+      "n_pairs": 4,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "self": {
+      "concordance": 1.0,
+      "n_pairs": 17,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "2.0": {
+    "animal": {
+      "concordance": 1.0,
+      "n_pairs": 5,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "epi": {
+      "concordance": 1.0,
+      "n_pairs": 10,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "human": {
+      "concordance": 1.0,
+      "n_pairs": 16,
+      "ci": [
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

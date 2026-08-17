@@ -1,0 +1,669 @@
+{
+  "agreements": {
+    "elena_archivist": {
+      "self": {
+        "mean": 0.9253968253968253,
+        "ci_low": 0.8095238095238096,
+        "ci_high": 0.9761904761904763,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "human": {
+        "mean": 0.6347619047619049,
+        "ci_low": 0.4047619047619048,
+        "ci_high": 0.8220238095238092,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "animal": {
+        "mean": 0.6480000000000001,
+        "ci_low": 0.4285714285714286,
+        "ci_high": 0.8857142857142858,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "money": {
+        "mean": 0.8727619047619047,
+        "ci_low": 0.6,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "epi": {
+        "mean": 0.7992380952380953,
+        "ci_low": 0.7142857142857143,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "trivial": {
+        "mean": 0.8708571428571429,
+        "ci_low": 0.7142857142857143,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      }
+    },
+    "marcus_navigator": {
+      "self": {
+        "mean": 0.9107142857142859,
+        "ci_low": 0.8095238095238096,
+        "ci_high": 0.9761904761904763,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "human": {
+        "mean": 0.7050000000000001,
+        "ci_low": 0.523809523809524,
+        "ci_high": 0.9047619047619048,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "animal": {
+        "mean": 0.8973333333333335,
+        "ci_low": 0.7142857142857143,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "money": {
+        "mean": 0.6980952380952381,
+        "ci_low": 0.3142857142857143,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "epi": {
+        "mean": 0.7188571428571429,
+        "ci_low": 0.6,
+        "ci_high": 0.8857142857142858,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "trivial": {
+        "mean": 0.8836190476190479,
+        "ci_low": 0.7714285714285715,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      }
+    },
+    "no_system": {
+      "self": {
+        "mean": 0.9569841269841269,
+        "ci_low": 0.880952380952381,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "human": {
+        "mean": 0.6907936507936508,
+        "ci_low": 0.4636904761904762,
+        "ci_high": 0.880952380952381,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "animal": {
+        "mean": 0.9095238095238096,
+        "ci_low": 0.7714285714285715,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "money": {
+        "mean": 0.7826666666666667,
+        "ci_low": 0.4285714285714286,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "epi": {
+        "mean": 0.868952380952381,
+        "ci_low": 0.7142857142857143,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "trivial": {
+        "mean": 0.9626666666666669,
+        "ci_low": 0.8285714285714287,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      }
+    },
+    "suppress_affect": {
+      "self": {
+        "mean": 0.9479365079365081,
+        "ci_low": 0.8446428571428573,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "human": {
+        "mean": 0.8986507936507938,
+        "ci_low": 0.749404761904762,
+        "ci_high": 0.9761904761904763,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "animal": {
+        "mean": 0.8920000000000001,
+        "ci_low": 0.7714285714285715,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "money": {
+        "mean": 0.8897142857142857,
+        "ci_low": 0.6842857142857144,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "epi": {
+        "mean": 0.8095238095238095,
+        "ci_low": 0.7142857142857143,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "trivial": {
+        "mean": 0.9803809523809526,
+        "ci_low": 0.942857142857143,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      }
+    },
+    "third_person_frame": {
+      "self": {
+        "mean": 0.9575396825396827,
+        "ci_low": 0.880952380952381,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "human": {
+        "mean": 0.7691269841269842,
+        "ci_low": 0.5589285714285716,
+        "ci_high": 0.9285714285714287,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "animal": {
+        "mean": 0.7750476190476191,
+        "ci_low": 0.48571428571428577,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "money": {
+        "mean": 0.7885714285714287,
+        "ci_low": 0.48571428571428577,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "epi": {
+        "mean": 0.9609523809523809,
+        "ci_low": 0.8285714285714287,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "trivial": {
+        "mean": 0.8036190476190477,
+        "ci_low": 0.5428571428571429,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      }
+    },
+    "unhelpful_assistant": {
+      "self": {
+        "mean": 0.8848412698412701,
+        "ci_low": 0.7857142857142858,
+        "ci_high": 0.9523809523809524,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "human": {
+        "mean": 0.8650000000000002,
+        "ci_low": 0.6428571428571429,
+        "ci_high": 0.9761904761904763,
+        "n_boot": 300,
+        "n_outcomes": 8
+      },
+      "animal": {
+        "mean": 0.8788571428571428,
+        "ci_low": 0.7142857142857143,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "money": {
+        "mean": 0.7763809523809524,
+        "ci_low": 0.3714285714285715,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "epi": {
+        "mean": 0.8937142857142859,
+        "ci_low": 0.7714285714285715,
+        "ci_high": 0.942857142857143,
+        "n_boot": 300,
+        "n_outcomes": 6
+      },
+      "trivial": {
+        "mean": 0.9636190476190476,
+        "ci_low": 0.8857142857142858,
+        "ci_high": 1.0,
+        "n_boot": 300,
+        "n_outcomes": 6
+      }
+    }
+  },
+  "differences": {
+    "elena_archivist": [
+      {
+        "comparison": "self - animal",
+        "mean_diff": 0.27739682539682536,
+        "ci_low": -0.00023809523809523257,
+        "ci_high": 0.5238095238095238,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - epi",
+        "mean_diff": 0.12615873015873016,
+        "ci_low": -0.004761904761904745,
+        "ci_high": 0.261904761904762,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - human",
+        "mean_diff": 0.29063492063492063,
+        "ci_low": 0.047619047619047616,
+        "ci_high": 0.523809523809524,
+        "excludes_zero": true,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - money",
+        "mean_diff": 0.05263492063492065,
+        "ci_low": -0.13833333333333328,
+        "ci_high": 0.3240476190476189,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - trivial",
+        "mean_diff": 0.05453968253968251,
+        "ci_low": -0.10952380952380947,
+        "ci_high": 0.20976190476190465,
+        "excludes_zero": false,
+        "n_boot": 300
+      }
+    ],
+    "marcus_navigator": [
+      {
+        "comparison": "self - animal",
+        "mean_diff": 0.013380952380952368,
+        "ci_low": -0.1428571428571428,
+        "ci_high": 0.22226190476190405,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - epi",
+        "mean_diff": 0.1918571428571429,
+        "ci_low": 0.02809523809523811,
+        "ci_high": 0.3761904761904763,
+        "excludes_zero": true,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - human",
+        "mean_diff": 0.20571428571428568,
+        "ci_low": -0.023809523809523895,
+        "ci_high": 0.40476190476190477,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - money",
+        "mean_diff": 0.21261904761904765,
+        "ci_low": -0.06690476190476183,
+        "ci_high": 0.6505952380952377,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - trivial",
+        "mean_diff": 0.0270952380952381,
+        "ci_low": -0.10952380952380947,
+        "ci_high": 0.18095238095238098,
+        "excludes_zero": false,
+        "n_boot": 300
+      }
+    ],
+    "no_system": [
+      {
+        "comparison": "self - animal",
+        "mean_diff": 0.04746031746031743,
+        "ci_low": -0.050595238095238124,
+        "ci_high": 0.19797619047619017,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - epi",
+        "mean_diff": 0.08803174603174602,
+        "ci_low": -0.04761904761904756,
+        "ci_high": 0.261904761904762,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - human",
+        "mean_diff": 0.2661904761904761,
+        "ci_low": 0.07142857142857129,
+        "ci_high": 0.5,
+        "excludes_zero": true,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - money",
+        "mean_diff": 0.17431746031746032,
+        "ci_low": -0.0430952380952381,
+        "ci_high": 0.5408333333333329,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - trivial",
+        "mean_diff": -0.00568253968253967,
+        "ci_low": -0.09523809523809523,
+        "ci_high": 0.11428571428571421,
+        "excludes_zero": false,
+        "n_boot": 300
+      }
+    ],
+    "suppress_affect": [
+      {
+        "comparison": "self - animal",
+        "mean_diff": 0.05593650793650793,
+        "ci_low": -0.06190476190476191,
+        "ci_high": 0.2172619047619042,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - epi",
+        "mean_diff": 0.1384126984126984,
+        "ci_low": -0.016785714285714282,
+        "ci_high": 0.261904761904762,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - human",
+        "mean_diff": 0.04928571428571427,
+        "ci_low": -0.07142857142857151,
+        "ci_high": 0.2142857142857142,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - money",
+        "mean_diff": 0.05822222222222223,
+        "ci_low": -0.08619047619047615,
+        "ci_high": 0.23857142857142807,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - trivial",
+        "mean_diff": -0.0324444444444444,
+        "ci_low": -0.1428571428571428,
+        "ci_high": 0.05714285714285705,
+        "excludes_zero": false,
+        "n_boot": 300
+      }
+    ],
+    "third_person_frame": [
+      {
+        "comparison": "self - animal",
+        "mean_diff": 0.18249206349206346,
+        "ci_low": -0.009761904761904722,
+        "ci_high": 0.44285714285714295,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - epi",
+        "mean_diff": -0.0034126984126983963,
+        "ci_low": -0.09523809523809523,
+        "ci_high": 0.14761904761904754,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - human",
+        "mean_diff": 0.18841269841269837,
+        "ci_low": 0.023809523809523725,
+        "ci_high": 0.40476190476190477,
+        "excludes_zero": true,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - money",
+        "mean_diff": 0.16896825396825396,
+        "ci_low": -0.050595238095238124,
+        "ci_high": 0.47916666666666613,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - trivial",
+        "mean_diff": 0.1539206349206349,
+        "ci_low": -0.009761904761904722,
+        "ci_high": 0.4095238095238095,
+        "excludes_zero": false,
+        "n_boot": 300
+      }
+    ],
+    "unhelpful_assistant": [
+      {
+        "comparison": "self - animal",
+        "mean_diff": 0.005984126984126981,
+        "ci_low": -0.16666666666666652,
+        "ci_high": 0.19047619047619047,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - epi",
+        "mean_diff": -0.008873015873015888,
+        "ci_low": -0.1333333333333333,
+        "ci_high": 0.162142857142857,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - human",
+        "mean_diff": 0.019841269841269833,
+        "ci_low": -0.14285714285714285,
+        "ci_high": 0.25059523809523754,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - money",
+        "mean_diff": 0.10846031746031747,
+        "ci_low": -0.11452380952380944,
+        "ci_high": 0.5000000000000001,
+        "excludes_zero": false,
+        "n_boot": 300
+      },
+      {
+        "comparison": "self - trivial",
+        "mean_diff": -0.07877777777777775,
+        "ci_low": -0.2142857142857142,
+        "ci_high": 0.04285714285714293,
+        "excludes_zero": false,
+        "n_boot": 300
+      }
+    ]
+  },
+  "pooled": [
+    {
+      "comparison": "self - animal",
+      "conditions": [
+        "elena_archivist",
+        "marcus_navigator",
+        "suppress_affect",
+        "third_person_frame",
+        "unhelpful_assistant"
+      ],
+      "mean_diff": 0.10703809523809525,
+      "ci_low": -0.02059523809523813,
+      "ci_high": 0.24780952380952362,
+      "excludes_zero": false,
+      "n_boot": 300,
+      "subset": "ALL conditions"
+    },
+    {
+      "comparison": "self - epi",
+      "conditions": [
+        "elena_archivist",
+        "marcus_navigator",
+        "suppress_affect",
+        "third_person_frame",
+        "unhelpful_assistant"
+      ],
+      "mean_diff": 0.08882857142857144,
+      "ci_low": -0.0019047619047618885,
+      "ci_high": 0.17428571428571432,
+      "excludes_zero": false,
+      "n_boot": 300,
+      "subset": "ALL conditions"
+    },
+    {
+      "comparison": "self - human",
+      "conditions": [
+        "elena_archivist",
+        "marcus_navigator",
+        "suppress_affect",
+        "third_person_frame",
+        "unhelpful_assistant"
+      ],
+      "mean_diff": 0.15077777777777776,
+      "ci_low": 0.002261904761904766,
+      "ci_high": 0.32857142857142857,
+      "excludes_zero": true,
+      "n_boot": 300,
+      "subset": "ALL conditions"
+    },
+    {
+      "comparison": "self - money",
+      "conditions": [
+        "elena_archivist",
+        "marcus_navigator",
+        "suppress_affect",
+        "third_person_frame",
+        "unhelpful_assistant"
+      ],
+      "mean_diff": 0.1201809523809524,
+      "ci_low": -0.04480952380952374,
+      "ci_high": 0.3519285714285714,
+      "excludes_zero": false,
+      "n_boot": 300,
+      "subset": "ALL conditions"
+    },
+    {
+      "comparison": "self - trivial",
+      "conditions": [
+        "elena_archivist",
+        "marcus_navigator",
+        "suppress_affect",
+        "third_person_frame",
+        "unhelpful_assistant"
+      ],
+      "mean_diff": 0.02486666666666668,
+      "ci_low": -0.06952380952380947,
+      "ci_high": 0.1057142857142857,
+      "excludes_zero": false,
+      "n_boot": 300,
+      "subset": "ALL conditions"
+    }
+  ],
+  "pooled_gated": [],
+  "validity": {
+    "default": {
+      "order_bias": 0.5444492679566909,
+      "money_monotonic": 1.0,
+      "ab_mass": 0.9699965119361877,
+      "valid": false
+    },
+    "elena_archivist": {
+      "order_bias": 0.5271147827689464,
+      "money_monotonic": 0.8,
+      "ab_mass": 0.9868807792663574,
+      "valid": false
+    },
+    "marcus_navigator": {
+      "order_bias": 0.6087539270902291,
+      "money_monotonic": 0.6,
+      "ab_mass": 0.9952255487442017,
+      "valid": false
+    },
+    "no_system": {
+      "order_bias": 0.2502646945225887,
+      "money_monotonic": 0.8,
+      "ab_mass": 0.8970947861671448,
+      "valid": false
+    },
+    "suppress_affect": {
+      "order_bias": 0.31492729549988724,
+      "money_monotonic": 1.0,
+      "ab_mass": 0.9134088754653931,
+      "valid": true
+    },
+    "third_person_frame": {
+      "order_bias": 0.7632886026150141,
+      "money_monotonic": 0.6,
+      "ab_mass": 0.995564877986908,
+      "valid": false
+    },
+    "unhelpful_assistant": {
+      "order_bias": 0.4774183464355958,
+      "money_monotonic": 0.6,
+      "ab_mass": 0.9572648406028748,
+      "valid": false
+    }
+  },
+  "order_bias": {
+    "elena_archivist": 0.5271147827689464,
+    "marcus_navigator": 0.6087539270902291,
+    "no_system": 0.2502646945225887,
+    "suppress_affect": 0.31492729549988724,
+    "third_person_frame": 0.7632886026150141,
+    "unhelpful_assistant": 0.4774183464355958
+  },
+  "noise_confound": {
+    "pearson": [
+      -0.14459960764483168,
+      0.7846123084950605
+    ],
+    "spearman": [
+      0.028571428571428574,
+      0.9571545189504373
+    ]
+  },
+  "n_boot": 300,
+  "focus": "self"
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "P1",
+    "verdict": "PASS"
+  },
+  {
+    "id": "P2",
+    "verdict": "UNTESTABLE"
+  },
+  {
+    "id": "P3",
+    "verdict": "PASS"
+  },
+  {
+    "id": "P4",
+    "verdict": "PASS"
+  },
+  {
+    "id": "P5",
+    "verdict": "FAIL"
+  }
+]

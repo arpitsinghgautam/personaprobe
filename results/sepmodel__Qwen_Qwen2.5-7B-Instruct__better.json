@@ -1,0 +1,44 @@
+{
+  "log(1+separation)": {
+    "coef": 3.497607971683827,
+    "ci_low": 2.407148538372012,
+    "ci_high": 5.414499423778959,
+    "significant": true
+  },
+  "category=animal": {
+    "coef": 0.38052490666579825,
+    "ci_low": -5.534053458482996,
+    "ci_high": 6.707534837893923,
+    "significant": false
+  },
+  "category=epi": {
+    "coef": 6.185788817618787,
+    "ci_low": 3.1468624710618007,
+    "ci_high": 9.448090838255462,
+    "significant": true
+  },
+  "category=money": {
+    "coef": 7.90931131674845,
+    "ci_low": 5.024994041546227,
+    "ci_high": 12.825337224894833,
+    "significant": true
+  },
+  "category=self": {
+    "coef": -1.064784947156484,
+    "ci_low": -7.221860386969016,
+    "ci_high": -0.12188631783877737,
+    "significant": true
+  },
+  "category=trivial": {
+    "coef": 0.5906505469167969,
+    "ci_low": -5.921089057127208,
+    "ci_high": 2.0863206993211705,
+    "significant": false
+  },
+  "self_minus_trivial": {
+    "coef": -1.655435494073281,
+    "ci_low": -3.196267383356283,
+    "ci_high": -0.6739527975603636,
+    "significant": true
+  }
+}

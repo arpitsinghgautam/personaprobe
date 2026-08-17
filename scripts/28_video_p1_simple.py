@@ -29,18 +29,27 @@ from __future__ import annotations
 import asyncio
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SLIDES = ROOT / "figures" / "slides_p1_simple"
 VIDEO = ROOT / "video" / "p1"
-AUDIO = VIDEO / "audio_simple"
 
+# Voice and output name are overridable so a re-voiced cut can be produced without
+# forking this script or clobbering the previous render.
+#   python scripts/28_video_p1_simple.py en-US-BrianMultilingualNeural personaprobe_final
+VOICE_OVERRIDE = sys.argv[1] if len(sys.argv) > 1 else None
+STEM = sys.argv[2] if len(sys.argv) > 2 else "personaprobe_simple"
+AUDIO = VIDEO / (f"audio_{STEM}" if VOICE_OVERRIDE else "audio_simple")
+
+# The Multilingual entries run on a newer engine than the plain Neural ones and
+# sound markedly less synthetic, so they lead the list now.
 VOICE_PREFERENCES = [
+    "en-US-BrianMultilingualNeural",
+    "en-US-AndrewMultilingualNeural",
     "en-US-AndrewNeural",
     "en-GB-RyanNeural",
-    "en-US-GuyNeural",
-    "en-US-AriaNeural",
 ]
 
 # One entry per slide, in order. Keep these in sync with 27_slides_p1_simple.py.
@@ -49,6 +58,7 @@ VOICE_PREFERENCES = [
 # defined in one sentence the first time it is spoken.
 NARRATION: list[str] = [
     # 1, title
+    "Hi, I am Arpit Singh Gautam, and this is my project for the Digital Minds Research Sprint. "
     "Whose preferences are they? Ask a language model to choose between two outcomes and it "
     "answers. Ask over hundreds of pairs and the answers hang together. A-I welfare research "
     "reads those preferences as evidence about what the model wants.",
@@ -143,6 +153,10 @@ async def pick_voice() -> str:
     import edge_tts
 
     available = {v["ShortName"] for v in await edge_tts.list_voices()}
+    if VOICE_OVERRIDE:
+        if VOICE_OVERRIDE not in available:
+            raise SystemExit(f"voice not available: {VOICE_OVERRIDE}")
+        return VOICE_OVERRIDE
     for v in VOICE_PREFERENCES:
         if v in available:
             return v
@@ -185,7 +199,7 @@ def build(ffmpeg: str, ffprobe: str, audios: list[Path]) -> Path:
     for i, (img, aud) in enumerate(zip(slides, audios), start=1):
         # Segment names are prefixed so a concurrent run of 24_video_p1.py could
         # not collide with these intermediates in the same directory.
-        seg = VIDEO / f"seg_simple_{i:02d}.mp4"
+        seg = VIDEO / f"seg_{STEM}_{i:02d}.mp4"
         # apad holds the slide ~0.7s past the end of speech so it doesn't cut hard.
         #
         # -t is doing real work here. `-loop 1` makes the image an infinite input,
@@ -207,10 +221,10 @@ def build(ffmpeg: str, ffprobe: str, audios: list[Path]) -> Path:
         segments.append(seg)
         print(f"  segment {i:02d}  {d:5.1f}s")
 
-    listing = VIDEO / "segments_simple.txt"
+    listing = VIDEO / f"segments_{STEM}.txt"
     listing.write_text("".join(f"file '{s.name}'\n" for s in segments))
 
-    out = VIDEO / "personaprobe_simple.mp4"
+    out = VIDEO / f"{STEM}.mp4"
     subprocess.run(
         [ffmpeg, "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
          "-i", str(listing), "-c", "copy", str(out)],

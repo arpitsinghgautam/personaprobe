@@ -82,10 +82,9 @@ results/            committed on purpose - every number in the paper is checkabl
 report/             the paper, ethics appendix, and the development record
 ```
 
-`report/problems.md` lists every problem I hit and how I fixed it, `report/decisions.md` every
-significant choice and why
-development. Four times a clean-looking result turned out to be wrong; those files are where that's
-written down.
+`report/problems.md` lists every problem I hit and how I fixed it, and `report/decisions.md` every
+significant choice and why. Four times a clean-looking result turned out to be wrong; those files
+are where that's written down.
 
 `scripts/14_verify_claims.py` checks every headline number in the paper against the committed JSON.
 

@@ -83,7 +83,7 @@ report/             the paper, ethics appendix, and the development record
 ```
 
 `report/problems.md` lists every problem I hit and how I fixed it, `report/decisions.md` every
-significant choice and why, and `report/audit_log.md` the methodological defects found during
+significant choice and why
 development. Four times a clean-looking result turned out to be wrong; those files are where that's
 written down.
 

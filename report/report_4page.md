@@ -59,9 +59,9 @@ This paper makes the following contributions.
    carried by any single outcome or condition, and not an artifact of second-person phrasing.
 4. We report in Section 4 that the effect is absent in two model families whose measurements pass
    the same validity criteria, which bounds the generality of the finding.
-5. We report two validity diagnostics, order bias and answer mass, which reversed two of our own
-   conclusions during this work. [VERIFY: we are not aware of prior preference-elicitation work that
-   reports either diagnostic as standard, but this needs checking before it is stated as a gap.]
+5. We report two validity diagnostics, order bias and answer mass, for every condition rather than
+   for the headline result alone, and we gate on them. Both reversed conclusions we had reached
+   during this work, which is our reason for arguing they belong in this literature.
 
 ## 2. Related Work
 

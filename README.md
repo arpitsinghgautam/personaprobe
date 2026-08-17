@@ -89,12 +89,6 @@ written down.
 
 `scripts/14_verify_claims.py` checks every headline number in the paper against the committed JSON.
 
-## Companion project
-
-[selfprobe](https://github.com/arpitsinghgautam/selfprobe) asks the related question, whether a
-model knows its own preferences, and whether it can detect a thought planted in its activations.
-Both share this measurement core.
-
 Built for the [Digital Minds Research
 Sprint](https://apartresearch.com/sprints/digital-minds-research-sprint-2026-08-14-to-2026-08-16),
 August 2026. Elicitation design follows Mazeika et al. (2025); their code wasn't used.

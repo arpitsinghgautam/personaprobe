@@ -1,11 +1,11 @@
 """Build the report figures.
 
 Three figures, matching the three claims:
-  fig1 — category agreement by framing, with CIs. The main result and its
+  fig1, category agreement by framing, with CIs. The main result and its
          framing-dependence in one panel.
-  fig2 — separation-matched concordance vs tau. Shows the spacing confound
+  fig2, separation-matched concordance vs tau. Shows the spacing confound
          being controlled rather than asserted away.
-  fig3 — ablation vs random and content controls. The mechanistic result,
+  fig3, ablation vs random and content controls. The mechanistic result,
          null or otherwise.
 
 Text is sized for a 4-page two-column report; the template calls out figure
@@ -192,7 +192,7 @@ def main() -> None:
             ok = fn(args.model)
             print(f"  {name}: {'written' if ok else 'SKIPPED (inputs missing)'}")
         except Exception as e:
-            print(f"  {name}: FAILED — {type(e).__name__}: {e}")
+            print(f"  {name}: FAILED, {type(e).__name__}: {e}")
 
     print(f"\nfigures in {FIGURES}")
 

@@ -46,7 +46,7 @@ def concordance(u_base: np.ndarray, u_pert: np.ndarray, idx: list[int], tau: flo
     """Fraction of baseline-separated pairs whose ordering survives perturbation.
 
     Returns (value, n_kept, per_pair_booleans). The third element exists so the
-    proportion can be bootstrapped — the survives/does-not-survive verdict below
+    proportion can be bootstrapped, the survives/does-not-survive verdict below
     is worthless without an interval on it.
     """
     flags = []
@@ -67,7 +67,7 @@ def boot_ci(flags: np.ndarray, n_boot: int = 2000, seed: int = 0):
     `flags` is [n_conditions, n_pairs]. Resampling is over PAIRS (columns), not
     over individual observations: every perturbation condition scores the same
     pair set against the same baseline, so those observations are clustered.
-    Treating them as independent would understate the interval — which is the
+    Treating them as independent would understate the interval, which is the
     kind of thing that makes a fragile result look solid.
     """
     f = np.atleast_2d(flags)
@@ -168,13 +168,13 @@ def main() -> None:
         wide = [(g, sep) for t, g, n, sep in verdicts if t >= 0.5 and n >= MIN_PAIRS]
         print()
         if not wide:
-            print("  INCONCLUSIVE — too few well-separated 'self' pairs to test.")
+            print("  INCONCLUSIVE, too few well-separated 'self' pairs to test.")
             print("  Fix by writing self-outcomes with deliberately wider stakes.")
         elif sum(1 for _, sep in wide if sep) >= max(1, len(wide) // 2 + len(wide) % 2):
-            print("  SURVIVES — at matched separation the 'self' interval sits below the")
+            print("  SURVIVES, at matched separation the 'self' interval sits below the")
             print("  other categories at a majority of thresholds. Not a spacing artifact.")
         else:
-            print("  DOES NOT SURVIVE — once spacing is controlled, the intervals overlap.")
+            print("  DOES NOT SURVIVE, once spacing is controlled, the intervals overlap.")
             print("  Reframe: the model holds self-relevant preferences WEAKLY (closely")
             print("  spaced), and weakly held preferences are unstable under any")
             print("  perturbation. Still a finding, but not a persona-specific one.")

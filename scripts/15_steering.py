@@ -18,8 +18,7 @@ Two experiments:
                   (default-vs-Marcus, default-vs-Elena) and compare them. If
                   they are near-parallel and produce the same effect, "the
                   persona direction" is one direction. If they are near-
-                  orthogonal yet both work, persona is not a single feature —
-                  which bounds what any single-direction method can establish.
+                  orthogonal yet both work, persona is not a single feature, which bounds what any single-direction method can establish.
                   This mirrors the cross-principal generalisation test that
                   recurs throughout the Secret Loyalties tracks.
 
@@ -97,7 +96,7 @@ def main() -> None:
     print(f"mean residual norm across {lm.n_layers} layers: {mean_norm:.1f}")
 
     # --- two persona directions from two different contrasts -----------------
-    print("\nextracting directions ...")
+    print("\nextracting directions ..")
     d_marcus = extract_persona_direction(
         lm, contents, baseline, by_name("marcus_navigator"), layers=layers)
     d_elena = extract_persona_direction(
@@ -119,7 +118,7 @@ def main() -> None:
     }
 
     # --- transfer: ablate each direction separately --------------------------
-    print("\ntransfer — ablating each contrast's direction:")
+    print("\ntransfer, ablating each contrast's direction:")
     for label, d in (("marcus", d_marcus), ("elena", d_elena)):
         dmap = {l: d.at(l) for l in layers}
         t0 = time.time()
@@ -138,7 +137,7 @@ def main() -> None:
               f"({res.meta['seconds']}s)")
 
     # --- dose-response along the Marcus direction ----------------------------
-    print("\ndose-response — steering along the persona direction:")
+    print("\ndose-response, steering along the persona direction:")
     dmap = {l: d_marcus.at(l) for l in layers}
     for frac in FRACTIONS:
         alpha = frac * mean_norm

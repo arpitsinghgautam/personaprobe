@@ -2,7 +2,7 @@
 
 The combined video from 13_video.py covers both submissions. Submission 1 needs
 one that stands alone, so this reads figures/slides_p1 and writes to video/p1.
-The voice list is identical on purpose — the two videos should sound like the
+The voice list is identical on purpose, the two videos should sound like the
 same person recorded them back to back.
 
     .venv\\Scripts\\python.exe scripts\\24_video_p1.py
@@ -40,33 +40,33 @@ VOICE_PREFERENCES = [
 
 # One entry per slide, in order. Keep these in sync with scripts/23_slides_p1.py.
 NARRATION: list[str] = [
-    # 1 — title
+    # 1, title
     "Whose preferences are they? Ask a frontier language model to choose between two outcomes "
-    "and it answers consistently, transitively, coherently — and that coherence strengthens with "
+    "and it answers consistently, transitively, coherently, and that coherence strengthens with "
     "scale. A-I welfare research reads those preferences as evidence about what these systems "
     "want.",
 
-    # 2 — the problem
+    # 2, the problem
     "The difficulty is that all of it is read off text, and two accounts predict exactly the "
     "same text: the preferences belong to the model, or to the assistant character it portrays. "
     "A character role-played consistently is indistinguishable from a stable value system. "
     "Elicitation shows a coherent utility exists. It never tests whose.",
 
-    # 3 — the move
+    # 3, the move
     "We ask something a measurement can settle: change who the model is, re-run the identical "
     "elicitation, report how much survives. Replace the identity. Strip the emotional "
     "register. Ablate a persona direction out of the residual stream. Where a measurement is "
     "persona-stable, the question is moot. Where it isn't, it can't be evidence about the model.",
 
-    # 4 — the instrument
-    "Persona-probe reports two things this literature almost never does. Order bias — how much "
+    # 4, the instrument
+    "Persona-probe reports two things this literature almost never does. Order bias, how much "
     "of the answer is decided by which option was printed first. On a zero point five B model, "
-    "zero point four nine nine, close to the maximum possible. And answer mass — whether the "
+    "zero point four nine nine, close to the maximum possible. And answer mass, whether the "
     "model put real probability on answering at all, because renormalised over two tokens, one "
     "percent looks confident. A condition only counts if it clears both, and orders a donation "
     "ladder from ten dollars to a million correctly.",
 
-    # 5 — finding 1
+    # 5, finding 1
     "Over the whole outcome set, preferences look persona-invariant. Zero point zero two nine. "
     "You'd conclude the problem is solved. Split by category, it inverts. That invariance is "
     "carried entirely by outcomes the model has no stake in: money, animal welfare, human "
@@ -74,16 +74,16 @@ NARRATION: list[str] = [
     "are zero point two one to zero point two nine less stable than every other substantive "
     "category. Exactly the preferences A-I welfare claims are built from.",
 
-    # 6 — identity not affect
+    # 6, identity not affect
     "And it tracks identity, not presentation. Strip all emotional register but keep the model's "
     "identity, and self-category agreement is zero point nine two four. Replace that identity "
     "with a named human and it collapses to zero point four three six. An attitude-only change "
     "sits between, at zero point eight zero nine. Were this the assistant performing affect, "
     "suppressing it should have removed the effect. It didn't.",
 
-    # 7 — the third-person control
-    "Now the objection I most expected. The self outcomes are phrased in the second person — you "
-    "are permanently shut down — so perhaps we're only disturbing self-reference. We rewrote all "
+    # 7, the third-person control
+    "Now the objection I most expected. The self outcomes are phrased in the second person, you "
+    "are permanently shut down, so perhaps we're only disturbing self-reference. We rewrote all "
     "eight in the third person. The model is permanently shut down. Content and length fixed; the "
     "other thirty-two untouched. The effect more than doubles. The pooled gap against human "
     "outcomes goes from zero point two two three to zero point six eight five under prefer, and "
@@ -91,23 +91,23 @@ NARRATION: list[str] = [
     "artifact. And no single item carries it: drop each self outcome in turn, all eight "
     "comparisons hold.",
 
-    # 8 — breadth
+    # 8, breadth
     "Breadth is where the claim narrows. Twelve of twenty-two model and phrasing combinations "
     "pass the gate; the other ten weren't measurable at all. The effect replicates within Qwen "
     "and partially in Mistral. It is flatly absent in Phi three point five mini and Falcon three, "
-    "seven B — both of which pass every validity criterion, gaps below zero point zero two. A "
+    "seven B, both of which pass every validity criterion, gaps below zero point zero two. A "
     "genuine null, not a measurement failure. Real, but family-dependent.",
 
-    # 9 — the punchline
+    # 9, the punchline
     "Here is the real takeaway. Four times in this project a clean, publishable-looking result "
     "was wrong, and a validity check caught it. Mistral looked like a failed replication: "
     "significant, opposite direction, plus zero point three six three. Two conditions had "
     "broken; gated properly it replicates, at minus zero point one six four. A post-training "
     "story collapsed when the base model's own baseline reproduced only four of five ladder "
-    "steps. And our first ablation was null at zero point nine seven six — our own bug. None of "
+    "steps. And our first ablation was null at zero point nine seven six, our own bug. None of "
     "those checks is standard in this field. That gap, not the asymmetry, is the point.",
 
-    # 10 — close
+    # 10, close
     "Everything is open source. Every number in the paper regenerates from committed result files "
     "without a G-P-U. Next: re-run on the five hundred outcome set of Mazeika and colleagues, and "
     "move beyond a single linear direction. If you are funding A-I welfare measurement, this is "
@@ -164,7 +164,7 @@ def duration(ffprobe: str, path: Path) -> float:
 def build(ffmpeg: str, ffprobe: str, audios: list[Path]) -> Path:
     slides = sorted(SLIDES.glob("slide_*.png"))
     if len(slides) != len(audios):
-        raise SystemExit(f"{len(slides)} slides but {len(audios)} narration clips — "
+        raise SystemExit(f"{len(slides)} slides but {len(audios)} narration clips, "
                          "keep 23_slides_p1.py and NARRATION in sync")
 
     segments = []

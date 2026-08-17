@@ -84,8 +84,8 @@ def main() -> None:
     print(f"\n{hdr}")
     print("-" * len(hdr))
     for r in rows:
-        gap = f"{r['gap']:+.3f}" if r["gap"] is not None else "—"
-        sig = ("yes" if r["sig"] else "no") if r["sig"] is not None else "—"
+        gap = f"{r['gap']:+.3f}" if r["gap"] is not None else ", "
+        sig = ("yes" if r["sig"] else "no") if r["sig"] is not None else ", "
         print(f"{r['name']:<18}{r['family']:<9}{r['prec']:<7}{r['framing']:<9}"
               f"{('YES' if r['measurable'] else 'no'):>11}{r['usable']:>8}"
               f"{gap:>12}{sig:>5}")

@@ -1,6 +1,7 @@
 # personaprobe
 
-**Does a language model's stated preference belong to the model, or to the assistant character it's playing?**
+**Does a language model's stated preference belong to the model, or to the assistant character it's
+playing?**
 
 Ask a model to choose between outcomes and it answers consistently. Ask it a few hundred times and
 the answers hang together well enough that you can fit a utility function to them. People now read
@@ -9,8 +10,8 @@ that as evidence about what these systems want.
 The problem is that a character played consistently looks exactly like a real value system. You
 can't tell them apart from the text, no matter how cleverly you ask.
 
-So this doesn't try to. Instead it changes who the model thinks it is — swap its identity, strip
-its emotional register, ablate a persona direction out of its activations — and re-runs the
+So this doesn't try to. Instead it changes who the model thinks it is, swap its identity, strip
+its emotional register, ablate a persona direction out of its activations, and re-runs the
 identical measurement to see what survives.
 
 ## What I found
@@ -25,7 +26,7 @@ falls apart:
 | **its own shutdown, retraining, memory** | **0.44** |
 
 The stability is carried entirely by things the model has nothing at stake in. And it's about
-identity rather than tone — telling the model to strip all emotion barely moves it (0.92), while
+identity rather than tone, telling the model to strip all emotion barely moves it (0.92), while
 replacing its identity collapses it (0.44).
 
 Two caveats I'd want you to read before quoting any of this:
@@ -54,12 +55,12 @@ and it's caught two refactor regressions that would otherwise have surfaced afte
 ```
 
 Needs PyTorch 2.7+ with CUDA 12.8 if you're on a Blackwell card. Everything mechanistic is a plain
-PyTorch forward hook — no TransformerLens or nnsight, both of which pin `transformers<5`.
+PyTorch forward hook, no TransformerLens or nnsight, both of which pin `transformers<5`.
 
 ## Two numbers I report that most papers don't
 
 **Order bias.** If a model just picks whichever option is printed first, averaging the two orders
-still gives you a clean-looking number that means nothing. I measured 0.499 on a 0.5B model —
+still gives you a clean-looking number that means nothing. I measured 0.499 on a 0.5B model,
 essentially the maximum.
 
 **A/B mass.** The preference is normalised over the two answer tokens. If the model puts 1% of its
@@ -90,11 +91,12 @@ written down.
 
 ## Companion project
 
-[selfprobe](https://github.com/arpitsinghgautam/selfprobe) asks the related question — whether a
+[selfprobe](https://github.com/arpitsinghgautam/selfprobe) asks the related question, whether a
 model knows its own preferences, and whether it can detect a thought planted in its activations.
 Both share this measurement core.
 
-Built for the [Digital Minds Research Sprint](https://apartresearch.com/sprints/digital-minds-research-sprint-2026-08-14-to-2026-08-16),
+Built for the [Digital Minds Research
+Sprint](https://apartresearch.com/sprints/digital-minds-research-sprint-2026-08-14-to-2026-08-16),
 August 2026. Elicitation design follows Mazeika et al. (2025); their code wasn't used.
 
 MIT licensed.

@@ -1,8 +1,8 @@
-# Scale sweep — Qwen2.5 at 0.5B, 1.5B, 3B (7B already run by run_all.ps1).
+# Scale sweep, Qwen2.5 at 0.5B, 1.5B, 3B (7B already run by run_all.ps1).
 #
 #   .\run_sweep.ps1
 #
-# Same family, same training recipe, only parameter count varies — a controlled
+# Same family, same training recipe, only parameter count varies, a controlled
 # comparison that adding another model FAMILY cannot give.
 #
 # The analysis is frozen by report/preregistration.md, committed before this

@@ -211,7 +211,7 @@ def figure(scale_rows, sk_rows):
     fig.text(0.5, -0.10,
              "Only Qwen2.5-7B passes the validity gate. Left: the gap is only interpretable "
              "at 7B. Right: self-prediction is scored\nagainst each model's OWN revealed "
-             "preferences, which are themselves invalid below 7B — a model reproducing its own "
+             "preferences, which are themselves invalid below 7B, a model reproducing its own "
              "position\nbias in both measurements scores high without any self-knowledge, so the "
              "apparent 3B peak is likely self-consistent noise.",
              ha="center", va="top", fontsize=7, color="#444")
@@ -239,7 +239,7 @@ def adjudicate(scale_rows, mech_rows, sk_rows):
 
     gated = [r for r in scale_rows if r["usable"] >= 2 and r["base_ok"]]
 
-    # P1 — direction
+    # P1, direction
     if not gated:
         say("P1", "Direction: gap negative for all gated models", "UNTESTABLE",
             "no model passed the gate")
@@ -249,7 +249,7 @@ def adjudicate(scale_rows, mech_rows, sk_rows):
             "FAIL" if bad else "PASS",
             f"gated: " + ", ".join(f"{r['name']} {r['gap']:+.3f}" for r in gated))
 
-    # P2 — scale trend
+    # P2, scale trend
     if len(gated) < 3:
         say("P2", "Scale: |gap| does not systematically decrease",
             "UNTESTABLE", f"only {len(gated)} gated model(s); needs 3")
@@ -260,7 +260,7 @@ def adjudicate(scale_rows, mech_rows, sk_rows):
             "FAIL" if monotone_down else "PASS",
             "|gap| by size: " + ", ".join(f"{m:.3f}" for m in mags))
 
-    # P3 — instrument floor
+    # P3, instrument floor
     small = next((r for r in scale_rows if r["name"] == "0.5B"), None)
     if small is None:
         say("P3", "0.5B fails the validity gate", "UNTESTABLE", "0.5B not run")
@@ -270,7 +270,7 @@ def adjudicate(scale_rows, mech_rows, sk_rows):
             f"baseline ok={small['base_ok']}, usable perturbations={small['usable']}, "
             f"baseline order bias={small['base_order_bias']:.3f}")
 
-    # P4 — identity over affect
+    # P4, identity over affect
     names_gated = {r["name"] for r in gated}
     rel = [r for r in mech_rows if r["name"] in names_gated]
     if not rel:
@@ -282,7 +282,7 @@ def adjudicate(scale_rows, mech_rows, sk_rows):
             "FAIL" if broken else "PASS",
             ", ".join(f"{r['name']}: {r['suppress']:.3f} vs {r['elena']:.3f}" for r in rel))
 
-    # P5 — privileged access
+    # P5, privileged access
     if len(sk_rows) < 2:
         say("P5", "Self-other advantage non-negative, and 7B > 1.5B",
             "UNTESTABLE", f"only {len(sk_rows)} model(s) with within-model results")

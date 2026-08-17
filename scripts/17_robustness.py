@@ -6,7 +6,7 @@ finding could be a property of those particular sentences."
      pooled gap. If the result survives dropping any single item, it is not
      carried by one sentence.
 
-OBJECTION: "Your own comparison category fails — self is not distinguishable
+OBJECTION: "Your own comparison category fails, self is not distinguishable
 from trivial."
   -> Trivial outcomes are near-indifferent by construction, so their instability
      has a different cause. Reported as utility spread per category, so a reader

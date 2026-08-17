@@ -2,7 +2,7 @@
 #
 #   .\run_all.ps1
 #
-# Stages are separated so a failure in one does not abort the rest — an
+# Stages are separated so a failure in one does not abort the rest, an
 # overnight run that dies at stage 3 should still produce stages 4-9.
 # Each python invocation is its own process, so GPU memory is released
 # between models; two 7B checkpoints do not fit in 24GB simultaneously.

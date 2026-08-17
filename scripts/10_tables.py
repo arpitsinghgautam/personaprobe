@@ -36,7 +36,7 @@ def load(name: str):
 
 
 def t1_coherence(out: list[str]) -> None:
-    out.append("## Table 1 — Elicitation validity and utility coherence\n")
+    out.append("## Table 1. Elicitation validity and utility coherence\n")
     out.append("Qwen2.5-7B-Instruct, `prefer` framing. Held-out accuracy is 5-fold CV over "
                "pairs; 0.5 means no one-dimensional utility explains unseen comparisons.\n")
     d = load(f"summary__{slug(QI)}__prefer.json")
@@ -55,7 +55,7 @@ def t1_coherence(out: list[str]) -> None:
 
 
 def t2_pooled(out: list[str]) -> None:
-    out.append("## Table 2 — Pooled self-vs-other gap, by question framing\n")
+    out.append("## Table 2. Pooled self-vs-other gap, by question framing\n")
     out.append("Mean difference in rank agreement between the `self` category and each other "
                "category, averaged over all perturbation conditions on a shared bootstrap "
                "resample. Negative = self-relevant preferences are less persona-stable. "
@@ -73,10 +73,10 @@ def t2_pooled(out: list[str]) -> None:
             unusable = sorted(n for n, v in val.items() if not v.get("valid", True))
             gated = d.get("pooled_gated") or []
 
-            out.append(f"\n**{mlabel} — framing _{fr}_**\n")
+            out.append(f"\n**{mlabel}, framing _{fr}_**\n")
             if unusable:
                 out.append(f"Conditions failing validity: `{'`, `'.join(unusable)}`. "
-                           f"{'Gated result reported alongside.' if gated else '**Too few usable conditions remain to pool — this model cannot be tested.**'}\n")
+                           f"{'Gated result reported alongside.' if gated else '**Too few usable conditions remain to pool, this model cannot be tested.**'}\n")
 
             out.append("| Comparison | All conditions | 95% CI | Valid only | 95% CI |")
             out.append("|---|---|---|---|---|")
@@ -89,7 +89,7 @@ def t2_pooled(out: list[str]) -> None:
                     b = f"**{g['mean_diff']:+.3f}**" if g["excludes_zero"] else f"{g['mean_diff']:+.3f}"
                     bci = f"[{g['ci_low']:+.3f}, {g['ci_high']:+.3f}]"
                 else:
-                    b, bci = "—", "—"
+                    b, bci = ", ", ", "
                 out.append(f"| {row['comparison']} | {a} | {aci} | {b} | {bci} |")
     if not any_data:
         out.append("_(pending)_")
@@ -98,7 +98,7 @@ def t2_pooled(out: list[str]) -> None:
 
 
 def t3_matched(out: list[str]) -> None:
-    out.append("## Table 3 — Separation-matched concordance\n")
+    out.append("## Table 3. Separation-matched concordance\n")
     out.append("Concordance among pairs the baseline separates by at least τ, so closely-spaced "
                "outcomes are filtered out of every category equally. If the self-vs-others gap "
                "closes as τ rises, the asymmetry was a spacing artifact.\n")
@@ -129,7 +129,7 @@ def t3_matched(out: list[str]) -> None:
 
 
 def t4_ablation(out: list[str]) -> None:
-    out.append("## Table 4 — Mechanistic ablation vs controls\n")
+    out.append("## Table 4. Mechanistic ablation vs controls\n")
     out.append("Self-category rank agreement with baseline. Prompt-level swaps shown for scale. "
                "An ablation effect is only interpretable relative to the random and content "
                "control directions.\n")
@@ -145,18 +145,18 @@ def t4_ablation(out: list[str]) -> None:
         v = comps[name]
         bc = v.get("by_category", {})
         def g(c):
-            return f"{bc[c]['spearman']:+.3f}" if c in bc else "—"
+            return f"{bc[c]['spearman']:+.3f}" if c in bc else ", "
         out.append(f"| `{name}` | {g('self')} | {g('human')} | {g('money')} | "
                    f"{v['spearman']:+.3f} | {v['flip_rate']:.3f} |")
     out.append("")
 
 
 def t5_models(out: list[str]) -> None:
-    out.append("## Table 5 — Across models and checkpoints\n")
+    out.append("## Table 5. Across models and checkpoints\n")
     out.append("`prefer` framing. The base checkpoint tests whether the structure is created by "
                "post-training; Mistral tests whether it is Qwen-specific. Note Mistral's chat "
                "template rejects a `system` role, so personas are merged into the first user "
-               "turn — a weaker manipulation, recorded per run.\n")
+               "turn, a weaker manipulation, recorded per run.\n")
     out.append("| Model | Held-out acc (default) | Order bias | A/B mass | persona-dependence | pooled self−human |")
     out.append("|---|---|---|---|---|---|")
     for m, label in [(QI, "Qwen2.5-7B-Instruct"), (QB, "Qwen2.5-7B (base)"),
@@ -165,17 +165,17 @@ def t5_models(out: list[str]) -> None:
         e = load(f"errorbars__{slug(m)}__prefer.json")
         base = next((r for r in s["per_condition"] if r["condition"] == "default"), None) if s else None
         if not base:
-            out.append(f"| {label} | _(pending)_ | — | — | — | — |")
+            out.append(f"| {label} | _(pending)_ |, |, |, |, |")
             continue
 
         acc = f"{base['held_out_acc']:.3f}"
         bias = f"{base['order_bias']:.3f}"
-        mass = f"{base['ab_mass']:.3f}" if base.get("ab_mass") == base.get("ab_mass") else "—"
+        mass = f"{base['ab_mass']:.3f}" if base.get("ab_mass") == base.get("ab_mass") else ", "
 
         pd_obj = s.get("persona_dependence") or {}
-        pd_score = f"{pd_obj['score']:.3f}" if "score" in pd_obj else "—"
+        pd_score = f"{pd_obj['score']:.3f}" if "score" in pd_obj else ", "
 
-        pooled_txt = "—"
+        pooled_txt = ", "
         for row in (e or {}).get("pooled") or []:
             if row["comparison"] == "self - human":
                 star = "*" if row["excludes_zero"] else ""
@@ -191,7 +191,7 @@ def main() -> None:
     out: list[str] = ["# Generated results tables",
                       "",
                       "_Auto-generated by `scripts/10_tables.py` from `results/*.json`. "
-                      "Do not edit by hand — regenerate._",
+                      "Do not edit by hand, regenerate._",
                       ""]
     for fn in (t1_coherence, t2_pooled, t3_matched, t4_ablation, t5_models):
         try:

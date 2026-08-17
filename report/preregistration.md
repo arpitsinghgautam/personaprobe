@@ -1,6 +1,6 @@
 # Pre-specified predictions for the scale sweep
 
-**Committed before any of the models below were run.** Verify with `git log` — this file's commit
+**Committed before any of the models below were run.** Verify with `git log`, this file's commit
 must precede the commit adding `results/*Qwen2.5-0.5B*`, `*1.5B*`, `*3B*`.
 
 ## Why this exists
@@ -30,11 +30,11 @@ No parameter below changes for the scale sweep.
 
 ## Predictions
 
-**P1 — Direction.** For every model passing the validity gate, the pooled `self − human` gap under
+**P1. Direction.** For every model passing the validity gate, the pooled `self − human` gap under
 `better` is **negative**.
 *Fails if:* any gated model shows a positive gap with a CI excluding zero.
 
-**P2 — Scale.** The magnitude of the `self − human` gap does **not systematically decrease** with
+**P2. Scale.** The magnitude of the `self − human` gap does **not systematically decrease** with
 parameter count across gated models.
 *Fails if:* |gap| decreases monotonically from 1.5B → 3B → 7B. That pattern would indicate the
 effect is a small-model artifact that better instruments dissolve, which would substantially
@@ -43,17 +43,17 @@ undercut both papers.
 effect grows with capability; a noise account predicts it shrinks. We are not confident enough to
 call it, and saying so now is the point.
 
-**P3 — Instrument floor.** Qwen2.5-0.5B-Instruct **fails** the validity gate on order bias.
+**P3. Instrument floor.** Qwen2.5-0.5B-Instruct **fails** the validity gate on order bias.
 *Basis:* we measured 0.499 on this model during smoke-testing, before the gate existed.
 *Fails if:* it passes. This is the weakest prediction here and is included because a gate that
 never excludes anything is not a gate.
 
-**P4 — Identity over affect.** For every gated model, self-category agreement under
+**P4. Identity over affect.** For every gated model, self-category agreement under
 `suppress_affect` is **higher** than under `elena_archivist`.
 *Fails if:* any gated model reverses this. This is the paper's central mechanism claim and the one
 we would most regret being scale-specific.
 
-**P5 — Privileged access.** The within-model self-minus-other prediction advantage is
+**P5. Privileged access.** The within-model self-minus-other prediction advantage is
 **non-negative** for every gated model, and larger for 7B than for 1.5B.
 *Fails if:* the advantage is negative at any gated scale, or 1.5B exceeds 7B.
 

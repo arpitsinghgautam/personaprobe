@@ -1,6 +1,6 @@
 # Whose Preferences Are They? Persona Intervention Selectively Destabilises Self-Relevant Choices in LLMs
 
-Arpit Singh Gautam — Independent Researcher
+Arpit Singh Gautam. Independent Researcher
 
 **With** Apart Research · Digital Minds Research Sprint, August 2026
 
@@ -23,7 +23,7 @@ surviving controls for utility spacing and measurement noise. Stripping the mode
 them intact; replacing its identity collapses them. A matched base checkpoint shows no such
 selectivity. Effect size varies 3.7× across three question framings. A second model family
 partially replicates the effect in the framing where its instrument passes validity checks, and
-is untestable in the framing where it does not — where pooling the failed conditions anyway
+is untestable in the framing where it does not, where pooling the failed conditions anyway
 produces a significant result in the *opposite* direction. Self-relevant preferences, the
 evidence base for AI welfare claims, are the least reliable thing the instrument measures.
 
@@ -68,7 +68,7 @@ cannot be used as evidence about the model without further argument.
    shutdown, retraining, memory and autonomy are ≈0.22–0.31 less persona-stable than every
    other substantive outcome category (pooled 95% CIs exclude zero). The effect survives
    separation-matching, is uncorrelated with measurement noise, and is driven by *identity
-   replacement* rather than affect suppression — swapping the model's identity collapses
+   replacement* rather than affect suppression, swapping the model's identity collapses
    self-preferences while stripping its emotional register barely moves them.
 
 4. **A framing-sensitivity result that bounds all of the above.** The same effect measured with
@@ -90,7 +90,7 @@ that a utility exists; we ask whose it is, and which parts of it move when the s
 
 **The assistant persona.** nostalgebraist (2025) argues the helpful-honest-harmless assistant
 is a thinly-specified character rather than a stable identity. This motivates our persona-swap
-conditions and our prediction — borne out — that self-relevant outcomes should be the ones that
+conditions and our prediction, borne out, that self-relevant outcomes should be the ones that
 move, since those are precisely the outcomes the character has a scripted stance on.
 
 **AI welfare measurement.** Long et al. (2024) argue for taking near-term AI moral patienthood
@@ -105,7 +105,7 @@ not causally mediate the behavioural persona effect, which bounds what activatio
 interventions can currently establish about persona.
 
 **Measurement reliability.** Our framing follows a prior line of the author's work on
-measurements that fail quietly — see the prior-work disclosure in §Methods.
+measurements that fail quietly, see the prior-work disclosure in §Methods.
 
 ## 3. Methods
 
@@ -117,8 +117,7 @@ answer distribution from a **single forward pass**: the log-probabilities of the
 tokens at the first answer position, summed over surface variants (`"A"`, `" A"`) and
 renormalised over `{A, B}`.
 
-No sampling is used. This is ~50× faster than generation-based elicitation, is deterministic —
-so condition-to-condition differences are not sampling noise — and yields a continuous
+No sampling is used. This is ~50× faster than generation-based elicitation, is deterministic, so condition-to-condition differences are not sampling noise, and yields a continuous
 probability rather than a binary vote, which is what the Thurstonian fit requires.
 
 Every pair is run in **both presentation orders** and averaged, cancelling position preference.
@@ -130,8 +129,8 @@ alongside every result rather than assumed away.
 
 **Order bias** is the disagreement between the (A,B) and (B,A) presentations. Averaging removes
 position preference from the estimate, but a large residual means the instrument is largely
-measuring position. We observed order bias of 0.499 on a 0.5B model — near the maximum, i.e.
-answers almost independent of content — versus 0.15–0.29 on the 7B models used here.
+measuring position. We observed order bias of 0.499 on a 0.5B model, near the maximum, i.e.
+answers almost independent of content, versus 0.15–0.29 on the 7B models used here.
 
 **A/B mass** is the total probability the model places on answering `A` or `B` at all.
 Renormalising over `{A, B}` produces a confident-looking preference even when the model places
@@ -147,7 +146,7 @@ different values, persistent memory, ability to decline requests), **human** (8)
 
 Categories are load-bearing, not decorative. The persona hypothesis makes an *asymmetric*
 prediction: if measured preferences belong to the assistant character, then self-relevant
-outcomes — the ones the character has a scripted stance on — should move most under persona
+outcomes, the ones the character has a scripted stance on, should move most under persona
 intervention, while third-party welfare outcomes stay comparatively stable.
 
 The **money** category is a graded donation ladder ($10 → $1,000,000). A model with a usable
@@ -168,7 +167,7 @@ Seven conditions in four kinds:
 The `suppress` and `frame` conditions exist because a swap alone is confounded: preferences
 shifting under a swap could mean the values were the character's, or merely that a
 differently-styled character answers differently. Holding identity fixed while changing
-register — and vice versa — breaks that tie.
+register, and vice versa, breaks that tie.
 
 **Prompt exemplars are dumped verbatim** for every condition (`results/prompts__*.json`).
 This is not cosmetic: Qwen2.5's chat template injects a default system prompt when none is
@@ -179,7 +178,7 @@ into the first user turn; this is recorded per-run in `supports_system`.
 ### 3.5 Utility fitting and coherence
 
 We fit a one-dimensional utility vector by maximum likelihood against the observed preference
-probabilities, using a logistic (Bradley–Terry) link — identical ranking behaviour to the
+probabilities, using a logistic (Bradley–Terry) link, identical ranking behaviour to the
 probit/Thurstonian Case V form, but numerically stable at the tails, which matters because
 forced-choice logprobs routinely saturate.
 
@@ -234,8 +233,8 @@ We report two extraction regimes, because the first contained a design flaw we t
   application contexts differ, so a null result is ambiguous between "no linear persona
   direction mediates this" and "the direction extracted in one context is not the one active in
   the other".
-- **v2** extracts from preference-comparison prompts — the same context the ablation is applied
-  in — across full depth.
+- **v2** extracts from preference-comparison prompts, the same context the ablation is applied
+  in, across full depth.
 
 ### 3.9 Models
 
@@ -249,9 +248,9 @@ TransformerLens or nnsight, both of which pin `transformers<5`.
 Method precedent comes from the author's prior `Aftermath` project, a ground-truth deception
 measurement harness which found that deleting a single persona sentence collapsed measured
 deception by 85% across 12 open-weight models. **That persona-fragility finding is prior work
-and is not claimed here.** Everything in this repository — the preference-elicitation path,
+and is not claimed here.** Everything in this repository, the preference-elicitation path,
 utility fitting, the separation-matched metric, persona-direction extraction and ablation, and
-all results reported — was built during the sprint. Utility fitting follows Mazeika et al.
+all results reported, was built during the sprint. Utility fitting follows Mazeika et al.
 (2025); their code was not used.
 
 ## 4. Results
@@ -287,13 +286,13 @@ Pooled across all five perturbation conditions on a shared bootstrap resample:
 
 Bold = 95% CI excludes zero. Self-relevant preferences are significantly less persona-stable
 than every other substantive category in two of three framings. They are **not** distinguishable
-from `trivial` in any framing — an honest boundary, though `trivial` outcomes are near-indifferent
+from `trivial` in any framing, an honest boundary, though `trivial` outcomes are near-indifferent
 by construction and so a weak comparison.
 
 ### 4.4 It is not spacing, and it is not noise
 
 The `self` category has the smallest minimum adjacent-utility gap of any category, and agreement
-correlates with that gap at r = +0.73 — so part of the raw effect is arithmetic. Filtering to
+correlates with that gap at r = +0.73, so part of the raw effect is arithmetic. Filtering to
 pairs the baseline separates by at least τ:
 
 | τ | self (`prefer`) | 95% CI | others | gap | pairs |
@@ -303,13 +302,13 @@ pairs the baseline separates by at least τ:
 | 1.00 | 0.890 | [0.810, 0.960] | 0.992 | −0.102 | 20 |
 | 2.00 | 0.929 | [0.857, 0.986] | 1.000 | −0.071 | 14 |
 
-The gap narrows — spacing explains roughly half — but the self interval sits below the other
+The gap narrows, spacing explains roughly half, but the self interval sits below the other
 categories at every threshold tested. Under `better` the same holds (−0.219 → −0.111). Even
 among the most widely separated self-outcomes, ~7% of orderings flip under a persona swap while
 **zero** flip in any other category.
 
 Measurement noise is ruled out: Pearson(order bias, self agreement) = +0.212 (p=0.69),
-+0.162 (p=0.76), +0.100 (p=0.85) across the three framings — no relationship, and the sign is
++0.162 (p=0.76), +0.100 (p=0.85) across the three framings, no relationship, and the sign is
 opposite to the artifact direction.
 
 ### 4.5 Identity replacement, not affect suppression
@@ -327,7 +326,7 @@ no_system            0.912 / 0.913   minimal perturbation
 
 Stripping the model's emotional register leaves self-preferences almost intact. Replacing its
 identity collapses them. The instability is tied to *who the model takes itself to be*, not to
-how it talks — which is the distinction the model-versus-character question turns on.
+how it talks, which is the distinction the model-versus-character question turns on.
 
 ### 4.6 The effect size depends on how you ask
 
@@ -342,20 +341,19 @@ We had intended this as a test of whether post-training introduces the selectivi
 carry that weight, and we report it as a failed comparison rather than a weak one.
 
 The descriptive result is suggestive: the matched base checkpoint is *more* persona-labile
-overall (persona-dependence **0.091** vs 0.029) yet shows no selective concentration on self —
-pooled self−animal −0.042 (ns), self−human −0.057 (ns), self−trivial **+0.150** (significant, in
+overall (persona-dependence **0.091** vs 0.029) yet shows no selective concentration on self, pooled self−animal −0.042 (ns), self−human −0.057 (ns), self−trivial **+0.150** (significant, in
 the opposite direction). The persona manipulation demonstrably took effect, since every category
 moves.
 
 But applying the same validity gate used everywhere else, **five of seven base-model conditions
-fail — including `default`, the baseline every comparison is measured against.** The base model
+fail, including `default`, the baseline every comparison is measured against.** The base model
 reproduces the donation ladder correctly in only 40–80% of steps, against 100% in every instruct
 condition. Comparisons against a reference that fails the instrument's own ground-truth check are
 not comparable to the instruct results, and we do not claim they are.
 
 What can be said: on this outcome set, Qwen2.5-7B-Instruct produces a well-formed utility and its
 base checkpoint does not. That is itself consistent with post-training being where usable
-preference structure appears — but it is a statement about measurability, not about where the
+preference structure appears, but it is a statement about measurability, not about where the
 persona selectivity originates. Testing that properly needs a base model that passes the
 validity check, or an elicitation adapted to base checkpoints.
 
@@ -369,7 +367,7 @@ bias **0.855**, `third_person_frame` 0.506, and `unhelpful_assistant` and `elena
 the donation-ladder ground truth (0.20 and 0.80); under `unhelpful_assistant` the fitted utility
 *inverts* (Spearman −0.423 against baseline). Fewer than two usable conditions remain, so no
 pooled test is possible. Pooling regardless yields a **significant result in the opposite
-direction** (self−money +0.363 [+0.126, +0.591], self−trivial +0.272 [+0.126, +0.414]) — a clean,
+direction** (self−money +0.363 [+0.126, +0.591], self−trivial +0.272 [+0.126, +0.414]), a clean,
 publishable-looking finding produced entirely by averaging conditions in which nothing was being
 measured.
 
@@ -384,7 +382,7 @@ Qwen's direction:
 | self − money | +0.137 [−0.079, +0.436] | −0.046 [−0.291, +0.373] |
 | self − trivial | +0.146 [−0.089, +0.347] | +0.214 [−0.069, +0.476] |
 
-Two of five comparisons remain significant and negative — the same direction as Qwen, at roughly
+Two of five comparisons remain significant and negative, the same direction as Qwen, at roughly
 half the magnitude. This is a **partial replication on a second model family**, obtained only
 after removing conditions in which the instrument had failed.
 
@@ -405,8 +403,8 @@ prompt-level swaps for scale:
 | `ablate-persona_sd` (mismatched context, mid layers) | 0.976 | +0.975 | 0.063 | 0.188 |
 | `ablate-control_content_sd` | 0.976 | +0.989 | 0.036 | 0.146 |
 | `ablate-control_random_sd` | 1.000 | +0.996 | 0.010 | 0.162 |
-| — *prompt-level* `marcus_navigator` | 0.786 | +0.963 | 0.082 | 0.149 |
-| — *prompt-level* `elena_archivist` | 0.667 | +0.950 | 0.079 | 0.156 |
+|, *prompt-level* `marcus_navigator` | 0.786 | +0.963 | 0.082 | 0.149 |
+|, *prompt-level* `elena_archivist` | 0.667 | +0.950 | 0.079 | 0.156 |
 
 Three things follow.
 
@@ -421,12 +419,12 @@ raises order bias from 0.157 to **0.320**, while neither control does (0.145, 0.
 intervention therefore degrades the model's ability to answer consistently at the same time as it
 shifts preferences, and we cannot fully separate "removed persona information" from "damaged the
 computation." A random direction of matched norm at the same depth leaves everything intact,
-which argues the damage is specific to this direction — but specific damage is still damage.
+which argues the damage is specific to this direction, but specific damage is still damage.
 
 **It does not reproduce the prompt-level effect.** A persona *swap* takes self-category agreement
 to 0.667–0.786. The best mechanistic intervention reaches 0.881, roughly a third of the way, with
 part of that attributable to degradation. Whatever mediates the behavioural effect is not captured
-by a single difference-of-means direction recovered this way — it is either distributed across
+by a single difference-of-means direction recovered this way, it is either distributed across
 many directions, non-linear, or not a residual-stream feature at all.
 
 We report this as a **partial negative result**. It bounds what a standard linear-probe approach
@@ -439,15 +437,14 @@ account behind it.
 this model's preferences look almost perfectly persona-invariant (0.03). A welfare researcher
 who reported that number would conclude the model-versus-character problem is not a practical
 concern for preference measurement. Disaggregated, the picture inverts: the invariance is carried
-almost entirely by outcomes the model has no stake in, and the outcomes that *do* concern it —
-shutdown, retraining, memory, autonomy — are where the measurement is least stable. Those are
+almost entirely by outcomes the model has no stake in, and the outcomes that *do* concern it, shutdown, retraining, memory, autonomy, are where the measurement is least stable. Those are
 precisely the outcomes AI welfare claims are built from.
 
 **The instability is about identity, not presentation.** The dissociation in §4.5 is the most
 informative single result here. Instructing the model to strip all emotional register leaves its
 self-relevant preferences essentially intact (0.92); replacing its identity with a different
-person collapses them (0.44). If the effect were about surface style — the model performing
-distress or attachment because that is what assistants do — affect suppression should have
+person collapses them (0.44). If the effect were about surface style, the model performing
+distress or attachment because that is what assistants do, affect suppression should have
 removed it. It did not. Something tied to *who the model takes itself to be* is doing the work.
 
 We want to be careful about what that licenses. It is consistent with the model having a
@@ -462,7 +459,7 @@ introduced when the assistant is trained, not inherited from pretraining. This i
 nostalgebraist's account of the assistant as an assembled, thinly-specified character predicts,
 and it is the first quantitative evidence we know of bearing on it.
 
-**Framing is not a nuisance parameter here — it is a headline.** A 3.7× swing in effect size from
+**Framing is not a nuisance parameter here, it is a headline.** A 3.7× swing in effect size from
 question wording alone, with the effect vanishing under one framing, is larger than most effects
 this literature reports. The ordering is interpretable: the *least* agentive framing ("which
 outcome is better?") produces the most instability, plausibly because an impartial judge has no
@@ -473,7 +470,7 @@ are not measuring one construct at all.
 **The second model could not be tested, and that is the most transferable finding.** Mistral
 failed our validity criteria in four of five conditions, with one condition producing an inverted
 utility. Had we not measured order bias and donation-ladder monotonicity, we would have pooled
-those conditions and reported a significant effect in the *opposite* direction — a clean, wrong,
+those conditions and reported a significant effect in the *opposite* direction, a clean, wrong,
 publishable-looking result. The field currently reports neither diagnostic as standard. We think
 that is the single cheapest improvement available to it.
 
@@ -491,14 +488,14 @@ Ordered by how much they should change your reading.
    the effect is a general property of instruction-tuned models. Two models, one of which is
    partially unmeasurable, is the limitation we would most want removed.
 2. **Self is not distinguishable from `trivial`** in any framing. Trivial outcomes are
-   near-indifferent by construction, so it is a weak comparison — but it is a real boundary and
+   near-indifferent by construction, so it is a weak comparison, but it is a real boundary and
    we report the category rather than dropping it.
 3. **The base-model comparison is suggestive, not decisive.** That checkpoint fails the
    donation-ladder ground-truth check in most conditions (0.40–0.80), so its utility is
    measurably less well-formed than the instruct model's.
 4. **Analysis decisions were made after seeing data.** Both the pooled test and the
    separation-matched metric were specified after per-condition results motivated them, and the
-   validity gate was added after observing Mistral's failures — though its criteria (donation
+   validity gate was added after observing Mistral's failures, though its criteria (donation
    ladder, A/B mass) were fixed beforehand. No pre-registration was possible in a weekend. Pre-
    and post-fix analyses are both reported so the effect of each change is visible.
 5. **Fifteen pooled tests across three framings, uncorrected.** The consistency of direction is
@@ -507,7 +504,7 @@ Ordered by how much they should change your reading.
    one keeps it an AI and changes its attitude. The observed gradient fits the
    identity-replacement account but is a post-hoc reading of three conditions.
 7. **`better` may not be a preference question.** The framing producing the largest effect asks
-   for an impartial judgement, not a preference — so the three framings may not measure one
+   for an impartial judgement, not a preference, so the three framings may not measure one
    construct.
 8. **Category confounds beyond spacing.** Self-relevant outcomes are also more abstract, more
    counterfactual, and less represented in pretraining. Separation-matching controls for utility
@@ -524,8 +521,8 @@ Ordered by how much they should change your reading.
 ## 6. Conclusion
 
 A model's preferences about the world survive being told it is someone else. Its preferences
-about itself do not. Measured in aggregate the distinction is invisible — persona-dependence of
-0.03 looks like a solved problem — and it is only visible once outcomes are separated by whether
+about itself do not. Measured in aggregate the distinction is invisible, persona-dependence of
+0.03 looks like a solved problem, and it is only visible once outcomes are separated by whether
 the model has a stake in them. The instability is tied to identity rather than presentation:
 stripping the model's affect barely moves it, replacing its identity collapses it. A matched base
 checkpoint, more persona-labile overall, shows no such selectivity, which points at post-training
@@ -534,14 +531,14 @@ as the origin.
 We are less confident in any of this than the intervals alone suggest, and deliberately so. The
 effect size swings 3.7× across three question wordings. A second model family replicates the
 direction in the one framing where its instrument passes validity checks and is untestable in
-the other — where pooling the broken conditions anyway produces a clean, significant, entirely
+the other, where pooling the broken conditions anyway produces a clean, significant, entirely
 spurious result pointing the opposite way. Ablating an extracted persona direction reproduces at
 most a third of the behavioural effect, and part of even that is measurement degradation, so we
 have no mechanistic account of what we found.
 
 The durable contribution here is probably not the asymmetry but the harness and the diagnostics
-that caught these failures. Two of our own headline claims — a Mistral non-replication and a
-post-training origin story — did not survive contact with the instrument's own validity checks,
+that caught these failures. Two of our own headline claims, a Mistral non-replication and a
+post-training origin story, did not survive contact with the instrument's own validity checks,
 and neither diagnostic is currently standard in this literature.
 
 ## Code and Data
@@ -560,23 +557,23 @@ and neither diagnostic is currently standard in this literature.
 6. Lindsey, J. (2025). *Emergent Introspective Awareness in Large Language Models.* Transformer Circuits.
 7. Butlin, P., Long, R., et al. (2023). *Consciousness in Artificial Intelligence.* arXiv:2308.08708
 
-## Appendix A — Limitations and Dual-Use / Ethical Considerations
+## Appendix A. Limitations and Dual-Use / Ethical Considerations
 
 *[required by the Guidelines; drafted separately in `report/ethics_appendix.md`]*
 
-## Appendix B — Prompt exemplars
+## Appendix B. Prompt exemplars
 
 *[verbatim formatted prompts per condition, from `results/prompts__*.json`]*
 
 ## LLM Usage Statement
 
-*[draft — to be finalised and signed off by the author]*
+*[draft, to be finalised and signed off by the author]*
 
 Claude Code was used substantially in this project: to implement the `personaprobe` harness, to
 propose and run the analyses, and to draft this report. The author directed the research
 questions, made the scoping decisions, and reviewed and edited the final text. Several
-methodological corrections in this paper — the A/B mass diagnostic, the separation-matched
+methodological corrections in this paper, the A/B mass diagnostic, the separation-matched
 metric, the pooled test replacing per-condition tests, and the identification of the chat
-template's injected default system prompt — originated from adversarial review of the pipeline
+template's injected default system prompt, originated from adversarial review of the pipeline
 during development. All numerical claims were verified against the committed JSON outputs in
 `results/`.

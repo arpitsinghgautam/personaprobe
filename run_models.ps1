@@ -1,4 +1,4 @@
-# Breadth sweep — does the effect survive outside the Qwen family?
+# Breadth sweep, does the effect survive outside the Qwen family?
 #
 #   .\run_models.ps1
 #

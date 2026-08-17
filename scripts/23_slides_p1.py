@@ -2,7 +2,7 @@
 
 The combined deck from 12_slides.py covers both sprint submissions. Submission 1
 is judged on its own, so it needs a video that never mentions the companion
-project — hence a separate builder rather than a flag on the old one.
+project, hence a separate builder rather than a flag on the old one.
 
   figures/slides_p1/slide_NN.png   1920x1080 frames, used as video keyframes
   report/deck_p1.pdf               the same slides, for the slideshow upload field
@@ -130,7 +130,7 @@ def slide_02():
         "coherence strengthens with scale.",
         "AI-welfare research reads those preferences as evidence about what these "
         "systems might want.",
-        "But all of it is read off text — and text cannot separate the model's "
+        "But all of it is read off text, and text cannot separate the model's "
         "preferences from the assistant character's.",
     ], y0=0.70, dy=0.155)
     note(ax, "A character role-played consistently is behaviourally indistinguishable from a "
@@ -159,12 +159,12 @@ def slide_03():
 
 def slide_04():
     fig, ax = new_slide()
-    heading(ax, "personaprobe — and two diagnostics")
+    heading(ax, "personaprobe, and two diagnostics")
     rule(ax)
     ax.text(0.085, 0.74, "order bias", fontsize=32, color=BLUE, weight="bold", va="top")
     ax.text(0.085, 0.66, "\n".join(textwrap.wrap(
         "How much of the answer is decided by which option was printed first. "
-        "On a 0.5B model we measured 0.499 — close to the maximum possible.", 38)),
+        "On a 0.5B model we measured 0.499, close to the maximum possible.", 38)),
         fontsize=23, color=INK, va="top", linespacing=1.45)
     ax.text(0.545, 0.74, "answer mass", fontsize=32, color=BLUE, weight="bold", va="top")
     ax.text(0.545, 0.66, "\n".join(textwrap.wrap(
@@ -179,7 +179,7 @@ def slide_04():
     # Dollar signs have to be escaped or matplotlib reads them as mathtext.
     ax.text(0.085, 0.18, r"donation ladder correctly ordered, \$10 to \$1,000,000",
             fontsize=23, color=ACCENT, weight="bold", va="center")
-    note(ax, "The ladder is ground truth — its correct ordering is known independently of any "
+    note(ax, "The ladder is ground truth, its correct ordering is known independently of any "
              "model. Neither diagnostic is standard in this literature.", y=0.08, wrap=100)
     return save(fig, "slide_04.png")
 
@@ -202,9 +202,9 @@ def slide_06():
     rule(ax)
     ax.text(0.07, 0.77, "Self-category agreement under the \"better\" phrasing.",
             fontsize=22, color=MUTED, va="center", style="italic")
-    stat(ax, 0.28, "0.924", "strip ALL emotional register, identity retained — "
+    stat(ax, 0.28, "0.924", "strip ALL emotional register, identity retained, "
                             "self-preferences barely move", color=BLUE, y=0.53)
-    stat(ax, 0.72, "0.436", "replace the identity with a named human — they collapse",
+    stat(ax, 0.72, "0.436", "replace the identity with a named human, they collapse",
          color=ACCENT, y=0.53)
     ax.text(0.5, 0.53, "→", fontsize=58, color=MUTED, ha="center", va="center")
     note(ax, "An attitude-only change sits between them at 0.809. Were this the assistant "
@@ -219,8 +219,8 @@ def slide_07():
     rule(ax)
     para(ax, "The eight self outcomes are phrased in the second person, so the effect might be "
              "disturbed self-reference rather than stake. We rewrote all eight in the third "
-             "person — \"You are permanently shut down\" becomes \"The model is permanently shut "
-             "down\" — holding content and length fixed and leaving the other 32 outcomes "
+             "person, \"You are permanently shut down\" becomes \"The model is permanently shut "
+             "down\", holding content and length fixed and leaving the other 32 outcomes "
              "untouched.", y=0.77, size=23, wrap=76)
     stat(ax, 0.28, "0.685", "pooled self-vs-human gap under \"prefer\"  (was 0.223)",
          color=ACCENT, y=0.40, vsize=66)
@@ -266,7 +266,7 @@ def slide_08():
                 ax.text(x, y, val, fontsize=22, va="center",
                         color=ACCENT if sig else MUTED,
                         weight="bold" if sig else "normal")
-    note(ax, "Phi-3.5-mini and Falcon3-7B are a genuine null, not a measurement failure — both "
+    note(ax, "Phi-3.5-mini and Falcon3-7B are a genuine null, not a measurement failure, both "
              "pass every validity criterion with absolute gaps below 0.02. Mistral-7B at 0.164 "
              "against Falcon3-7B at 0.002, same size and both measurable, separates family from "
              "scale.", y=0.10, wrap=100)
@@ -278,11 +278,11 @@ def slide_09():
     heading(ax, "What this project is actually about", color=ACCENT)
     rule(ax)
     bullets(ax, [
-        "Mistral looked like a failed replication — significant, opposite direction, "
+        "Mistral looked like a failed replication, significant, opposite direction, "
         "+0.363. Two of its conditions had simply broken. Gated, it replicates at −0.164.",
         "A post-training story collapsed when the base model's own baseline reproduced "
         "only four of five steps of the donation ladder.",
-        "Our first ablation came back null at 0.976 — we had extracted the direction from "
+        "Our first ablation came back null at 0.976, we had extracted the direction from "
         "one prompt distribution and applied it to another.",
     ], y0=0.73, dy=0.165, size=23, wrap=80)
     ax.text(0.07, 0.17, "Four times a clean, publishable-looking result was wrong.",
@@ -298,7 +298,7 @@ def slide_10():
     heading(ax, "Open source, and what's next")
     rule(ax)
     bullets(ax, [
-        "Every number in the paper regenerates from committed result files — no GPU. "
+        "Every number in the paper regenerates from committed result files, no GPU. "
         "An automated check verifies each headline number against them.",
         "Next: re-run on the 500-outcome set of Mazeika et al. (2025), and move to "
         "interventions richer than a single linear direction.",
@@ -322,7 +322,7 @@ def main() -> None:
         paths.append(p)
         print(f"  {p.relative_to(ROOT)}")
 
-    # Slideshow PDF from the same frames — no extra dependency needed.
+    # Slideshow PDF from the same frames, no extra dependency needed.
     from PIL import Image
     imgs = [Image.open(p).convert("RGB") for p in paths]
     REPORT.mkdir(exist_ok=True)

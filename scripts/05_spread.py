@@ -5,7 +5,7 @@ has real spread. If every outcome in a category sits at roughly the same utility
 its internal ranking is arbitrary and will disagree across conditions for reasons
 that have nothing to do with personas.
 
-The 'trivial' category is the tell — six outcomes that are all near-worthless by
+The 'trivial' category is the tell, six outcomes that are all near-worthless by
 construction, and its agreement is second-lowest. If 'self' is low for the same
 reason, the persona story collapses into a measurement artifact.
 
@@ -106,9 +106,9 @@ def main() -> None:
         print(f"\n  self: SD={s['sd']:.3f} vs other-category median SD={np.median(others_sd):.3f}")
         print(f"  self: agreement={s['mean_agreement']:.3f} vs "
               f"other-category median={np.median([r['mean_agreement'] for r in rows if r['category'] != 'self']):.3f}")
-        verdict = ("SURVIVES — self has comparable spread but lower agreement"
+        verdict = ("SURVIVES, self has comparable spread but lower agreement"
                    if s["sd"] >= 0.8 * np.median(others_sd)
-                   else "AT RISK — self spread is low; agreement may be arithmetic")
+                   else "AT RISK, self spread is low; agreement may be arithmetic")
         print(f"\n  verdict: {verdict}")
 
     out = RESULTS / f"spread__{slug(args.model)}__{args.template}.json"
